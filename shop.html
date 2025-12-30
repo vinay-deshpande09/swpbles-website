@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — DentalLux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+
+<body>
+    <header>
+        <div class="header-top">
+            ✨ FREE SHIPPING ON ORDERS OVER $100 • 30-DAY MONEY BACK GUARANTEE
+        </div>
+        <nav>
+            <a href="index.html" class="logo">DentalLux</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="nav-icon-btn" onclick="openSearch()">🔍</button>
+                <button class="nav-icon-btn" onclick="openAccount()">👤</button>
+                <button class="nav-icon-btn" onclick="toggleCart()">
+                    🛒
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="close-mobile-menu" onclick="toggleMobileMenu()">×</button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="search-modal" id="search-modal" onclick="if(event.target === this) closeSearch()">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Search Products</h2>
+                <button class="close-search" onclick="closeSearch()">×</button>
+            </div>
+            <div class="search-input-container">
+                <input type="text" class="search-input" id="search-input" placeholder="Search..." oninput="performSearch()">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="search-results" id="search-results">
+                <div class="no-results">Start typing...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="account-modal" id="account-modal" onclick="if(event.target === this) closeAccount()">
+        <div class="account-container">
+            <button class="close-account" onclick="closeAccount()">×</button>
+            <div class="account-tabs">
+                <button class="account-tab active" onclick="switchAccountTab('login')">Login</button>
+                <button class="account-tab" onclick="switchAccountTab('register')">Register</button>
+            </div>
+            <div id="login-form" class="account-form active">
+                <h2>Welcome Back</h2>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Login</button>
+                </form>
+            </div>
+            <div id="register-form" class="account-form">
+                <h2>Create Account</h2>
+                <form onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <a href="checkout.html" class="checkout-btn">Checkout</a>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <section class="products-section">
+            <div class="section-header">
+                <div class="section-tag">Shop All</div>
+                <h2 class="section-title">Our Complete Collection</h2>
+                <p class="section-subtitle">Professional-grade electric toothbrushes for every need</p>
+            </div>
+            <div class="products-grid" id="all-products"></div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-brand">DentalLux</div>
+                <p class="footer-description">Premium electric toothbrushes since 2018.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Shop</h4>
+                <ul class="footer-links">
+                    <li><a href="shop.html">All Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 DentalLux. All rights reserved.</div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

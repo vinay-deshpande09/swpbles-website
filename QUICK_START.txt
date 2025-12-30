@@ -1,0 +1,56 @@
+═════════════════════════════════════════════════
+  🦷 DENTALLUX - MULTI-PAGE WEBSITE
+═════════════════════════════════════════════════
+
+✅ PROPER STRUCTURE - SEPARATE HTML FILES!
+
+═════════════════════════════════════════════════
+  📤 UPLOAD TO GITHUB
+═════════════════════════════════════════════════
+
+1. Create repository: dentallux-website (PUBLIC)
+
+2. Upload ALL files:
+   - index.html
+   - shop.html
+   - about.html
+   - contact.html
+   - checkout.html
+   - css/ folder
+   - js/ folder
+   - images/ folder
+
+3. Enable GitHub Pages:
+   - Settings → Pages
+   - Select "main" branch
+   - Save
+
+4. Wait 2 minutes
+
+5. Visit: https://YOUR-USERNAME.github.io/dentallux-website/
+
+═════════════════════════════════════════════════
+  ✅ HOW IT WORKS
+═════════════════════════════════════════════════
+
+Click "Shop" → Opens shop.html
+Click "About" → Opens about.html
+Click "Contact" → Opens contact.html
+
+Normal navigation - no tricks!
+
+═════════════════════════════════════════════════
+  ✏️ EASY TO EDIT
+═════════════════════════════════════════════════
+
+Change prices: js/products.js
+Change colors: css/style.css
+Add images: images/ folder
+
+═════════════════════════════════════════════════
+
+This is a STANDARD multi-page website!
+Each page is a separate file!
+Navigation works like any normal website!
+
+═════════════════════════════════════════════════

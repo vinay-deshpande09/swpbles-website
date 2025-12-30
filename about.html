@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — DentalLux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">✨ FREE SHIPPING ON ORDERS OVER $100</div>
+        <nav>
+            <a href="index.html" class="logo">DentalLux</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+                <button class="nav-icon-btn" onclick="toggleCart()">🛒<span class="cart-badge" id="cart-count">0</span></button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="close-mobile-menu" onclick="toggleMobileMenu()">×</button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cart-total">$0.00</span></div>
+            <a href="checkout.html" class="checkout-btn">Checkout</a>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <section class="content-container">
+            <div class="content-hero">
+                <div class="section-tag">Our Story</div>
+                <h1 class="section-title">Revolutionizing Dental Care</h1>
+                <p class="section-subtitle">Founded in 2018, DentalLux is committed to making professional-grade oral care accessible to everyone.</p>
+            </div>
+
+            <div class="content-grid" style="margin-bottom: 60px;">
+                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80" alt="Technology" class="content-image">
+                <div class="content-text">
+                    <h3>Advanced Technology</h3>
+                    <p>Our sonic toothbrushes deliver 40,000 vibrations per minute, removing up to 10x more plaque than manual brushing. Each brush is designed with precision-engineered bristles and smart pressure sensors.</p>
+                    <p>We use only the highest quality materials, ensuring durability and effectiveness with every use.</p>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h4>Clinically Proven</h4>
+                    <p>Dentist-recommended technology backed by clinical studies</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h4>Eco-Friendly</h4>
+                    <p>Sustainable materials and recyclable packaging</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔋</div>
+                    <h4>Long Battery</h4>
+                    <p>Up to 4 weeks on a single charge</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h4>Waterproof</h4>
+                    <p>IPX7 rated for shower use</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h4>Smart Timer</h4>
+                    <p>2-minute auto timer for optimal brushing</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h4>2-Year Warranty</h4>
+                    <p>Full warranty coverage on all products</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-brand">DentalLux</div>
+                <p class="footer-description">Premium electric toothbrushes since 2018.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 DentalLux</div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

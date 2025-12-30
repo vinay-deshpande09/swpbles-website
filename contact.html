@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — DentalLux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">✨ FREE SHIPPING ON ORDERS OVER $100</div>
+        <nav>
+            <a href="index.html" class="logo">DentalLux</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+                <button class="nav-icon-btn" onclick="toggleCart()">🛒<span class="cart-badge" id="cart-count">0</span></button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="close-mobile-menu" onclick="toggleMobileMenu()">×</button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cart-total">$0.00</span></div>
+            <a href="checkout.html" class="checkout-btn">Checkout</a>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <section class="content-container">
+            <div class="content-hero">
+                <div class="section-tag">Get In Touch</div>
+                <h1 class="section-title">Contact Us</h1>
+                <p class="section-subtitle">Have questions? We're here to help!</p>
+            </div>
+
+            <div class="contact-grid" style="display: grid; gap: 30px; max-width: 1200px; margin: 0 auto;">
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(10, 77, 78, 0.08);">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; color: var(--deep-teal);">Send Us a Message</h3>
+                    <form onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="5" required style="width: 100%; padding: 16px; border: 2px solid var(--light-grey); border-radius: 8px; font-size: 16px; font-family: 'Work Sans', sans-serif;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+
+                <div style="display: grid; gap: 20px;">
+                    <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(10, 77, 78, 0.08); text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 15px;">📍</div>
+                        <h4 style="font-size: 18px; margin-bottom: 10px; font-weight: 600;">Address</h4>
+                        <p style="font-size: 14px; color: var(--sage); line-height: 1.6;">123 Dental Street<br>San Francisco, CA 94102</p>
+                    </div>
+                    <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(10, 77, 78, 0.08); text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 15px;">📞</div>
+                        <h4 style="font-size: 18px; margin-bottom: 10px; font-weight: 600;">Phone</h4>
+                        <p style="font-size: 14px; color: var(--sage);">1-800-555-DENTAL</p>
+                    </div>
+                    <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(10, 77, 78, 0.08); text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 15px;">✉️</div>
+                        <h4 style="font-size: 18px; margin-bottom: 10px; font-weight: 600;">Email</h4>
+                        <p style="font-size: 14px; color: var(--sage);">hello@dentallux.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-brand">DentalLux</div>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 DentalLux</div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
